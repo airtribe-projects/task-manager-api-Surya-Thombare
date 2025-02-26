@@ -25,12 +25,6 @@
       "completed": false
     },
     {
-      "id": 5,
-      "title": "Install Mongoose",
-      "description": "Install Mongoose",
-      "completed": false
-    },
-    {
       "id": 6,
       "title": "Install Morgan",
       "description": "Install Morgan",
@@ -89,6 +83,29 @@
       "title": "Install jsonwebtoken",
       "description": "Install jsonwebtoken",
       "completed": false
+    },
+    {
+      "title": "Create a new project",
+      "description": "Create a new project using Magic",
+      "completed": false,
+      "id": "a3c24eea-a082-4d53-bcd4-6e6e57ce8853",
+      "createdAt": "2025-02-26T09:33:07.540Z"
+    },
+    {
+      "title": "Create a new project",
+      "description": "Create a new project using Magic",
+      "completed": false,
+      "Priority": "Low",
+      "id": "5ef48897-7269-4867-8594-b68f8fc5fc0c",
+      "createdAt": "2025-02-26T09:34:46.934Z"
+    },
+    {
+      "title": "Create a new project",
+      "description": "Create a new project using Magic",
+      "completed": false,
+      "Priority": "Low",
+      "id": "4cf4ffbf-2f2e-4440-805b-0de84266c1b2",
+      "createdAt": "2025-02-26T09:38:18.561Z"
     }
   ]
 }
