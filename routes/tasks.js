@@ -42,12 +42,23 @@ const addAtasks = async (req, res) => {
         const tasks = JSON.parse(data);
 
         const newTasks = req.body
+
+        if(!newTasks.title || !newTasks.description){
+            return res.status(400).json({ error: 'Title and description are required' });
+        }
+
+        if(!newTasks.completed || typeof(newTasks.completed) !== 'boolean'){
+            newTasks.completed = false
+        }
+
+        if(!newTasks.Priority){
+            newTasks.Priority = 'Low'
+        }
+
         newTasks.id = uuidv4()
         newTasks.createdAt = new Date().toISOString()
 
         tasks.tasks.push(newTasks)
-
-        console.log('newTasks', newTasks)
 
         const controller = new AbortController();
         const { signal } = controller;
@@ -65,9 +76,6 @@ const updateATask = async (req, res) => {
         const data = await fs.promises.readFile('task.json', "utf8");
         const tasks = JSON.parse(data);
         const id = req.params.id;
-
-        const newTasks = req.body
-        newTasks.createdAt = new Date().toISOString()
         
         const taskIndex = tasks.tasks.findIndex((t) => t.id.toString() === id);
 

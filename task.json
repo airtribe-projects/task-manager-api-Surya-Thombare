@@ -109,12 +109,28 @@
     },
     {
       "title": "Update the project",
-      "description": "Create a new folder structure",
-      "completed": true,
+      "description": "Need to do some more refactoring",
+      "completed": false,
       "Priority": "High",
       "id": "9b63a89e-535f-48d0-b216-8a6e918d415b",
       "createdAt": "2025-02-27T07:37:39.303Z",
-      "updatedAt": "2025-02-27T07:37:39.303Z"
+      "updatedAt": "2025-02-27T07:47:39.255Z"
+    },
+    {
+      "title": "Handle error",
+      "description": "",
+      "completed": true,
+      "Priority": "High",
+      "id": "90a32979-8c18-41b8-b357-af975c46c261",
+      "createdAt": "2025-02-27T07:49:38.541Z"
+    },
+    {
+      "title": "Handle error",
+      "description": "add error hnaldings",
+      "completed": true,
+      "Priority": "High",
+      "id": "d33679a5-67f5-464e-b720-007de2ee878e",
+      "createdAt": "2025-02-27T07:50:19.144Z"
     }
   ]
 }
