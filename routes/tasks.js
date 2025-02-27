@@ -8,6 +8,51 @@ const getAllTasks = async (req, res) => {
     try {
         const data = await fs.promises.readFile('task.json', 'utf8');
         const tasksData = JSON.parse(data);
+
+        const { completed, search, sort } = req.query;
+
+        if (completed === 'true') {
+            tasksData.tasks = tasksData.tasks.filter((t) => t.completed);
+        } else if (completed === 'false') {
+            tasksData.tasks = tasksData.tasks.filter((t) => !t.completed);
+        }
+
+        if (search) {
+            tasksData.tasks = tasksData.tasks.filter(task => 
+              task.title.toLowerCase().includes(search.toLowerCase()) || 
+              task.description.toLowerCase().includes(search.toLowerCase())
+            );
+          }
+
+          if(sort) {
+            if (sort === 'asc') {
+              tasksData.tasks = tasksData.tasks.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+            } else if (sort === 'desc') {
+              tasksData.tasks = tasksData.tasks.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+            }
+          }
+
+        tasksData.tasks = tasksData.tasks.reverse();
+        res.json(tasksData.tasks);
+    } catch (err) {
+        res.status(500).json({ error: 'Error reading tasks' });
+    }
+}
+
+const getAllTasksbyPriority = async (req, res) => {
+    try {
+        const data = await fs.promises.readFile('task.json', 'utf8');
+        const tasksData = JSON.parse(data);
+
+        const { level } = req.params;
+
+        const lowercase = level.charAt(0).toUpperCase() + level.slice(1).toLowerCase();
+
+        if (!['High', 'Medium', 'Low'].includes(lowercase)) {
+            return res.status(400).json({ error: 'Invalid priority level. Must be High, Medium, or Low' });
+        }
+
+        tasksData.tasks = tasksData.tasks.filter((t) => t.Priority === lowercase);
         tasksData.tasks = tasksData.tasks.reverse();
         res.json(tasksData.tasks);
     } catch (err) {
@@ -20,8 +65,6 @@ const getATask =  async (req, res) => {
         const data = await fs.promises.readFile('task.json', "utf8");
         const tasks = JSON.parse(data);
         const id = req.params.id;
-
-        console.log(typeof(id))
         
         const task = tasks.tasks.find((t) => t.id.toString() === id);
 
@@ -133,5 +176,6 @@ router.get('/tasks/:id', getATask)
 router.post('/tasks', addAtasks)
 router.put('/tasks/:id', updateATask)
 router.delete('/tasks/:id', deleteATask)
+router.get('/tasks/priority/:level', getAllTasksbyPriority)
 
 export default router
