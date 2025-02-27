@@ -1,94 +1,60 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "title": "Set up environment",
-      "description": "Install Node.js, npm, and git",
-      "completed": true
+      "title": "Handle error",
+      "description": "add error hnaldings",
+      "completed": true,
+      "Priority": "High",
+      "id": "babfef44-8490-4f54-b3c7-73f52346c34d",
+      "createdAt": "2025-02-27T15:47:22.056Z"
     },
     {
-      "id": 2,
-      "title": "Create a new project",
-      "description": "Create a new project using the Express application generator",
-      "completed": true
+      "title": "Complet the DSA",
+      "description": "Complet the DSA challenge",
+      "completed": true,
+      "Priority": "High",
+      "id": "037011ce-c11a-453b-9397-da4e3066fb2e",
+      "createdAt": "2025-02-27T16:07:08.315Z"
     },
     {
-      "id": 3,
-      "title": "Install nodemon",
-      "description": "Install nodemon as a development dependency",
-      "completed": true
+      "title": "Complet the DSA",
+      "description": "Complet the DSA challenge",
+      "completed": true,
+      "Priority": "High",
+      "id": "90ff0700-9e4b-4f72-b182-cd9581cc036a",
+      "createdAt": "2025-02-27T16:08:51.182Z"
     },
     {
-      "id": 4,
-      "title": "Install Express",
-      "description": "Install Express",
-      "completed": false
+      "title": "handle error",
+      "description": "handle the errors across app",
+      "completed": true,
+      "Priority": "High",
+      "id": "1c2c79c5-52ed-441c-aeff-6dcac5a85d30",
+      "createdAt": "2025-02-27T16:09:22.333Z"
     },
     {
-      "id": 5,
-      "title": "Install Mongoose",
-      "description": "Install Mongoose",
-      "completed": false
+      "title": "handle error",
+      "description": "handle the errors across app",
+      "completed": true,
+      "Priority": "High",
+      "id": "70ce614c-6e67-4633-b832-2bde75486a2e",
+      "createdAt": "2025-02-27T16:37:36.486Z"
     },
     {
-      "id": 6,
-      "title": "Install Morgan",
-      "description": "Install Morgan",
-      "completed": false
+      "title": "handle error",
+      "description": "handle the errors across app",
+      "completed": true,
+      "Priority": "High",
+      "id": "903ec6ee-43ad-4235-8c07-c6ca8669a21e",
+      "createdAt": "2025-02-27T16:37:36.486Z"
     },
     {
-      "id": 7,
-      "title": "Install body-parser",
-      "description": "Install body-parser",
-      "completed": false
-    },
-    {
-      "id": 8,
-      "title": "Install cors",
-      "description": "Install cors",
-      "completed": false
-    },
-    {
-      "id": 9,
-      "title": "Install passport",
-      "description": "Install passport",
-      "completed": false
-    },
-    {
-      "id": 10,
-      "title": "Install passport-local",
-      "description": "Install passport-local",
-      "completed": false
-    },
-    {
-      "id": 11,
-      "title": "Install passport-local-mongoose",
-      "description": "Install passport-local-mongoose",
-      "completed": false
-    },
-    {
-      "id": 12,
-      "title": "Install express-session",
-      "description": "Install express-session",
-      "completed": false
-    },
-    {
-      "id": 13,
-      "title": "Install connect-mongo",
-      "description": "Install connect-mongo",
-      "completed": false
-    },
-    {
-      "id": 14,
-      "title": "Install dotenv",
-      "description": "Install dotenv",
-      "completed": false
-    },
-    {
-      "id": 15,
-      "title": "Install jsonwebtoken",
-      "description": "Install jsonwebtoken",
-      "completed": false
+      "title": "handle error",
+      "description": "handle the errors across app",
+      "completed": true,
+      "Priority": "High",
+      "id": "86f617ac-0d25-415b-af20-6b41bfd72091",
+      "createdAt": "2025-02-27T16:37:36.486Z"
     }
   ]
 }
