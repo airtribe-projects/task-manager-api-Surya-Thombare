@@ -1,11 +1,20 @@
 import express  from "express";
 import { v4 as uuidv4 } from 'uuid';
 import fs from "node:fs"
+import {checkFile, createFile} from '../middleware/checkFile.js'
 
 const router = express.Router();
 
 const getAllTasks = async (req, res) => {
     try {
+
+        if (!fs.existsSync('task.json')) {
+            // const initialData = { tasks: [] };
+            // fs.writeFileSync('task.json', JSON.stringify(initialData, null, 2), 'utf8');
+            // console.log('task.json created with an empty tasks array.');
+            res.status(500).json({ error: 'Error fetching tasks' });
+        }
+
         const data = await fs.promises.readFile('task.json', 'utf8');
         const tasksData = JSON.parse(data);
 
@@ -171,10 +180,10 @@ const deleteATask = async (req, res) => {
     }
 }
 
-router.get('/tasks', getAllTasks )
-router.get('/tasks/:id', getATask)
-router.post('/tasks', addAtasks)
-router.put('/tasks/:id', updateATask)
+router.get('/tasks', checkFile, getAllTasks)
+router.get('/tasks/:id', checkFile, getATask)
+router.post('/tasks', createFile, addAtasks)
+router.put('/tasks/:id',createFile, updateATask)
 router.delete('/tasks/:id', deleteATask)
 router.get('/tasks/priority/:level', getAllTasksbyPriority)
 
