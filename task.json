@@ -106,6 +106,15 @@
       "Priority": "Low",
       "id": "4cf4ffbf-2f2e-4440-805b-0de84266c1b2",
       "createdAt": "2025-02-26T09:38:18.561Z"
+    },
+    {
+      "title": "Update the project",
+      "description": "Create a new folder structure",
+      "completed": true,
+      "Priority": "High",
+      "id": "9b63a89e-535f-48d0-b216-8a6e918d415b",
+      "createdAt": "2025-02-27T07:37:39.303Z",
+      "updatedAt": "2025-02-27T07:37:39.303Z"
     }
   ]
 }
