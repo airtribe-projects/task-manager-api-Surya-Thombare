@@ -57,6 +57,24 @@ The API will be available at `http://localhost:3000`
     "Priority": "High"
   }
   ```
+
+### Create Multiple New Task
+- **POST** `/multipleTasks`
+- **Body:**
+  ```json
+  [{
+    "title": "Task Title",
+    "description": "Task Description",
+    "completed": false,
+    "Priority": "High"
+  },
+  {
+    "title": "Task Title",
+    "description": "Task Description",
+    "completed": false,
+    "Priority": "High"
+  }]
+  ```
 - **Notes:**
   - `title` and `description` are required
   - `completed` defaults to `false` if not provided
@@ -92,34 +110,41 @@ You can test the API using tools like Postman or curl. Here are some example cur
 
 1. Get all tasks:
 ```bash
-curl http://localhost:3000/tasks
+curl http://localhost:3000/v1/tasks
 ```
 
 2. Get completed tasks:
 ```bash
-curl http://localhost:3000/tasks?completed=true
+curl http://localhost:3000/v1/tasks?completed=true
 ```
 
 3. Search tasks:
 ```bash
-curl http://localhost:3000/tasks?search=project
+curl http://localhost:3000/v1/tasks?search=project
 ```
 
 4. Create a new task:
 ```bash
-curl -X POST http://localhost:3000/tasks \
+curl -X POST http://localhost:3000/v1/tasks \
   -H "Content-Type: application/json" \
   -d '{"title":"New Task","description":"Task Description","Priority":"High"}'
 ```
 
-5. Update a task:
+5. Create multiple new tasks:
 ```bash
-curl -X PUT http://localhost:3000/tasks/task-id \
+curl -X POST http://localhost:3000/v1/multipleTasks \
+  -H "Content-Type: application/json" \
+  -d '[{"title":"New Task","description":"Task Description","Priority":"High"},{"title":"New Task","description":"Task Description","Priority":"High"}]'
+```
+
+6. Update a task:
+```bash
+curl -X PUT http://localhost:3000/v1/tasks/task-id \
   -H "Content-Type: application/json" \
   -d '{"completed":true}'
 ```
 
-6. Get high priority tasks:
+7. Get high priority tasks:
 ```bash
-curl http://localhost:3000/tasks/priority/high
+curl http://localhost:3000/v1/tasks/priority/high
 ```
