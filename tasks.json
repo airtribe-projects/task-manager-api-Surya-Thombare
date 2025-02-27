@@ -1,136 +1,36 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "title": "Set up environment",
-      "description": "Install Node.js, npm, and git",
-      "completed": true
-    },
-    {
-      "id": 2,
-      "title": "Create a new project",
-      "description": "Create a new project using the Express application generator",
-      "completed": true
-    },
-    {
-      "id": 3,
-      "title": "Install nodemon",
-      "description": "Install nodemon as a development dependency",
-      "completed": true
-    },
-    {
-      "id": 4,
-      "title": "Install Express",
-      "description": "Install Express",
-      "completed": false
-    },
-    {
-      "id": 6,
-      "title": "Install Morgan",
-      "description": "Install Morgan",
-      "completed": false
-    },
-    {
-      "id": 7,
-      "title": "Install body-parser",
-      "description": "Install body-parser",
-      "completed": false
-    },
-    {
-      "id": 8,
-      "title": "Install cors",
-      "description": "Install cors",
-      "completed": false
-    },
-    {
-      "id": 9,
-      "title": "Install passport",
-      "description": "Install passport",
-      "completed": false
-    },
-    {
-      "id": 10,
-      "title": "Install passport-local",
-      "description": "Install passport-local",
-      "completed": false
-    },
-    {
-      "id": 11,
-      "title": "Install passport-local-mongoose",
-      "description": "Install passport-local-mongoose",
-      "completed": false
-    },
-    {
-      "id": 12,
-      "title": "Install express-session",
-      "description": "Install express-session",
-      "completed": false
-    },
-    {
-      "id": 13,
-      "title": "Install connect-mongo",
-      "description": "Install connect-mongo",
-      "completed": true
-    },
-    {
-      "id": 14,
-      "title": "Install dotenv",
-      "description": "Install dotenv",
-      "completed": true
-    },
-    {
-      "id": 15,
-      "title": "Install jsonwebtoken",
-      "description": "Install jsonwebtoken",
-      "completed": false
-    },
-    {
-      "title": "Create a new project",
-      "description": "Create a new project using Magic",
-      "completed": false,
-      "id": "a3c24eea-a082-4d53-bcd4-6e6e57ce8853",
-      "createdAt": "2025-02-26T09:33:07.540Z"
-    },
-    {
-      "title": "Create a new project",
-      "description": "Create a new project using Magic",
-      "completed": false,
-      "Priority": "Low",
-      "id": "5ef48897-7269-4867-8594-b68f8fc5fc0c",
-      "createdAt": "2025-02-26T09:34:46.934Z"
-    },
-    {
-      "title": "Create a new project",
-      "description": "Create a new project using Magic",
-      "completed": false,
-      "Priority": "Low",
-      "id": "4cf4ffbf-2f2e-4440-805b-0de84266c1b2",
-      "createdAt": "2025-02-26T09:38:18.561Z"
-    },
-    {
-      "title": "Update the project",
-      "description": "Need to do some more refactoring",
-      "completed": false,
-      "Priority": "Low",
-      "id": "9b63a89e-535f-48d0-b216-8a6e918d415b",
-      "createdAt": "2025-02-27T07:37:39.303Z",
-      "updatedAt": "2025-02-27T07:47:39.255Z"
-    },
-    {
-      "title": "Handle error",
-      "description": "",
-      "completed": true,
-      "Priority": "Low",
-      "id": "90a32979-8c18-41b8-b357-af975c46c261",
-      "createdAt": "2025-02-27T07:49:38.541Z"
-    },
-    {
-      "title": "Handle error",
-      "description": "add error hnaldings",
+      "title": "handle error",
+      "description": "handle the errors across app",
       "completed": true,
       "Priority": "High",
-      "id": "d33679a5-67f5-464e-b720-007de2ee878e",
-      "createdAt": "2025-02-27T07:50:19.144Z"
+      "id": "fb8a546d-c318-455d-b675-bd7561b09a55",
+      "createdAt": "2025-02-27T16:55:48.541Z"
+    },
+    {
+      "title": "handle error",
+      "description": "handle the errors across app",
+      "completed": true,
+      "Priority": "High",
+      "id": "607314a6-aacd-48ce-ad34-9f651b47be79",
+      "createdAt": "2025-02-27T16:55:52.479Z"
+    },
+    {
+      "title": "handle error",
+      "description": "handle the errors across app",
+      "completed": true,
+      "Priority": "High",
+      "id": "dbb20016-af0e-4633-b562-e3430b53077f",
+      "createdAt": "2025-02-27T16:55:52.480Z"
+    },
+    {
+      "title": "handle error",
+      "description": "handle the errors across app",
+      "completed": true,
+      "Priority": "High",
+      "id": "68e8789b-d2fb-4efa-aded-422d7b8355f4",
+      "createdAt": "2025-02-27T16:55:52.480Z"
     }
   ]
 }

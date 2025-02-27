@@ -8,14 +8,14 @@ const router = express.Router();
 const getAllTasks = async (req, res) => {
     try {
 
-        if (!fs.existsSync('task.json')) {
+        if (!fs.existsSync('tasks.json')) {
             // const initialData = { tasks: [] };
-            // fs.writeFileSync('task.json', JSON.stringify(initialData, null, 2), 'utf8');
-            // console.log('task.json created with an empty tasks array.');
+            // fs.writeFileSync('tasks.json', JSON.stringify(initialData, null, 2), 'utf8');
+            // console.log('tasks.json created with an empty tasks array.');
             res.status(500).json({ error: 'Error fetching tasks' });
         }
 
-        const data = await fs.promises.readFile('task.json', 'utf8');
+        const data = await fs.promises.readFile('tasks.json', 'utf8');
         const tasksData = JSON.parse(data);
 
         const { completed, search, sort } = req.query;
@@ -50,7 +50,7 @@ const getAllTasks = async (req, res) => {
 
 const getAllTasksbyPriority = async (req, res) => {
     try {
-        const data = await fs.promises.readFile('task.json', 'utf8');
+        const data = await fs.promises.readFile('tasks.json', 'utf8');
         const tasksData = JSON.parse(data);
 
         const { level } = req.params;
@@ -71,7 +71,7 @@ const getAllTasksbyPriority = async (req, res) => {
 
 const getATask = async (req, res) => {
     try {
-        const data = await fs.promises.readFile('task.json', "utf8");
+        const data = await fs.promises.readFile('tasks.json', "utf8");
         const tasks = JSON.parse(data);
         const id = req.params.id;
 
@@ -90,7 +90,7 @@ const getATask = async (req, res) => {
 
 const addAtasks = async (req, res) => {
     try {
-        const data = await fs.promises.readFile('task.json', 'utf8')
+        const data = await fs.promises.readFile('tasks.json', 'utf8')
         const tasks = JSON.parse(data);
 
         const newTasks = req.body
@@ -114,7 +114,7 @@ const addAtasks = async (req, res) => {
 
         const controller = new AbortController();
         const { signal } = controller;
-        await fs.promises.writeFile('task.json', JSON.stringify(tasks, null, 2), { encoding: 'utf8', signal });
+        await fs.promises.writeFile('tasks.json', JSON.stringify(tasks, null, 2), { encoding: 'utf8', signal });
 
         res.json(newTasks)
     } catch (error) {
@@ -125,7 +125,7 @@ const addAtasks = async (req, res) => {
 
 const updateATask = async (req, res) => {
     try {
-        const data = await fs.promises.readFile('task.json', "utf8");
+        const data = await fs.promises.readFile('tasks.json', "utf8");
         const tasks = JSON.parse(data);
         const id = req.params.id;
 
@@ -143,7 +143,7 @@ const updateATask = async (req, res) => {
 
         tasks.tasks[taskIndex] = updatedTask;
 
-        await fs.promises.writeFile('task.json', JSON.stringify(tasks, null, 2), { encoding: 'utf8' });
+        await fs.promises.writeFile('tasks.json', JSON.stringify(tasks, null, 2), { encoding: 'utf8' });
 
 
         res.json(updatedTask);
@@ -156,7 +156,7 @@ const updateATask = async (req, res) => {
 
 const deleteATask = async (req, res) => {
     try {
-        const data = await fs.promises.readFile('task.json', "utf8");
+        const data = await fs.promises.readFile('tasks.json', "utf8");
         const tasks = JSON.parse(data);
         const id = req.params.id;
 
@@ -169,7 +169,7 @@ const deleteATask = async (req, res) => {
 
         tasks.tasks.splice(taskIndex, 1);
 
-        await fs.promises.writeFile('task.json', JSON.stringify(tasks, null, 2), { encoding: 'utf8' });
+        await fs.promises.writeFile('tasks.json', JSON.stringify(tasks, null, 2), { encoding: 'utf8' });
 
 
         res.json({ message: 'Task deleted successfully' });
@@ -187,7 +187,7 @@ const addMulitpleTasks = async (req, res) => {
             return res.status(400).json({ error: 'Request body must be a non-empty array of tasks' });
         }
 
-        const data = await fs.promises.readFile('task.json', 'utf8');
+        const data = await fs.promises.readFile('tasks.json', 'utf8');
         const tasks = JSON.parse(data);
 
         const newTasks = req.body.map(task => {
@@ -206,7 +206,7 @@ const addMulitpleTasks = async (req, res) => {
 
         tasks.tasks.push(...newTasks);
 
-        await fs.promises.writeFile('task.json', JSON.stringify(tasks, null, 2), { encoding: 'utf8' });
+        await fs.promises.writeFile('tasks.json', JSON.stringify(tasks, null, 2), { encoding: 'utf8' });
 
         res.status(201).json({
             message: `Successfully added ${newTasks.length} tasks`,
